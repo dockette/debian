@@ -25,13 +25,23 @@ Base docker image based on Debian / Jessie (8).
 [![Docker Stars](https://img.shields.io/docker/stars/dockette/jessie.svg?style=flat)](https://hub.docker.com/r/dockette/jessie/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/dockette/jessie.svg?style=flat)](https://hub.docker.com/r/dockette/jessie/)
 
-`dockette/debian:jessie`
-`dockette/jessie`
+```
+docker run dockette/debian:jessie /bin/bash
+```
+
+```
+docker run dockette/jessie /bin/bash
+```
 
 ## Sid
 
 [![Docker Stars](https://img.shields.io/docker/stars/dockette/sid.svg?style=flat)](https://hub.docker.com/r/dockette/sid/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/dockette/sid.svg?style=flat)](https://hub.docker.com/r/dockette/sid/)
 
-`dockette/debian:sid`
-`dockette/sid`
+```
+docker run dockette/debian:sid /bin/bash
+```
+
+```
+docker run dockette/sid /bin/bash
+```
