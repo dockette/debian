@@ -1,6 +1,6 @@
 # Debian
 
-Base docker image based on Debian / Jessie (8).
+Base docker image based on Debian. Special variants for Sid / Jessie / Wheezy.
 
 ------
 
@@ -9,15 +9,15 @@ Base docker image based on Debian / Jessie (8).
 
 ## Discussion / Help
 
-[![Join the chat](https://img.shields.io/gitter/room/dockette/dockette.svg?style=flat-square)](https://gitter.im/contributte/contributte?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat](https://img.shields.io/gitter/room/dockette/dockette.svg?style=flat-square)](https://gitter.im/dockette/dockette?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Image
 
 - predefined user `dfx` with UID `1000`
 - predefined constants:
-    - USER_UID: 1000
-    - USER_NAME: dfx
-    - USER_HOME: /home/dfx
+    - `USER_UID`: `1000`
+    - `USER_NAME`: `dfx`
+    - `USER_HOME`: `/home/dfx`
 - some optimalization for smaller image 
 
 ## Jessie
@@ -26,11 +26,11 @@ Base docker image based on Debian / Jessie (8).
 [![Docker Pulls](https://img.shields.io/docker/pulls/dockette/jessie.svg?style=flat)](https://hub.docker.com/r/dockette/jessie/)
 
 ```
-docker run dockette/debian:jessie /bin/bash
+docker run -it --rm dockette/debian:jessie /bin/bash
 ```
 
 ```
-docker run dockette/jessie /bin/bash
+docker run -it --rm dockette/jessie /bin/bash
 ```
 
 ## Sid
@@ -39,9 +39,22 @@ docker run dockette/jessie /bin/bash
 [![Docker Pulls](https://img.shields.io/docker/pulls/dockette/sid.svg?style=flat)](https://hub.docker.com/r/dockette/sid/)
 
 ```
-docker run dockette/debian:sid /bin/bash
+docker run -it --rm dockette/debian:sid /bin/bash
 ```
 
 ```
-docker run dockette/sid /bin/bash
+docker run -it --rm dockette/sid /bin/bash
+```
+
+## Wheezy
+
+[![Docker Stars](https://img.shields.io/docker/stars/dockette/wheezy.svg?style=flat)](https://hub.docker.com/r/dockette/wheezy/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/wheezy.svg?style=flat)](https://hub.docker.com/r/dockette/wheezy/)
+
+```
+docker run -it --rm dockette/debian:wheezy /bin/bash
+```
+
+```
+docker run -it --rm dockette/wheezy /bin/bash
 ```
