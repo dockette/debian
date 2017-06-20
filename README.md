@@ -20,6 +20,19 @@ Base docker image based on Debian. Special variants for Sid / Jessie / Wheezy.
     - `USER_HOME`: `/home/dfx`
 - some optimalization for smaller image 
 
+## Stretch
+
+[![Docker Stars](https://img.shields.io/docker/stars/dockette/stretch.svg?style=flat)](https://hub.docker.com/r/dockette/stretch/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/stretch.svg?style=flat)](https://hub.docker.com/r/dockette/stretch/)
+
+```
+docker run -it --rm dockette/debian:stretch /bin/bash
+```
+
+```
+docker run -it --rm dockette/stretch /bin/bash
+```
+
 ## Jessie
 
 [![Docker Stars](https://img.shields.io/docker/stars/dockette/jessie.svg?style=flat)](https://hub.docker.com/r/dockette/jessie/)
