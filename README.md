@@ -20,54 +20,26 @@ Base docker image based on Debian. Special variants for Sid / Jessie / Wheezy.
     - `USER_HOME`: `/home/dfx`
 - some optimalization for smaller image 
 
-## Stretch
-
-[![Docker Stars](https://img.shields.io/docker/stars/dockette/stretch.svg?style=flat)](https://hub.docker.com/r/dockette/stretch/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/stretch.svg?style=flat)](https://hub.docker.com/r/dockette/stretch/)
-
-```
-docker run -it --rm dockette/debian:stretch /bin/bash
-```
-
-```
-docker run -it --rm dockette/stretch /bin/bash
-```
-
-## Jessie
-
-[![Docker Stars](https://img.shields.io/docker/stars/dockette/jessie.svg?style=flat)](https://hub.docker.com/r/dockette/jessie/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/jessie.svg?style=flat)](https://hub.docker.com/r/dockette/jessie/)
-
-```
-docker run -it --rm dockette/debian:jessie /bin/bash
-```
-
-```
-docker run -it --rm dockette/jessie /bin/bash
-```
-
-## Sid
-
-[![Docker Stars](https://img.shields.io/docker/stars/dockette/sid.svg?style=flat)](https://hub.docker.com/r/dockette/sid/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/sid.svg?style=flat)](https://hub.docker.com/r/dockette/sid/)
+## CLI
 
 ```
 docker run -it --rm dockette/debian:sid /bin/bash
-```
-
-```
 docker run -it --rm dockette/sid /bin/bash
-```
 
-## Wheezy
+docker run -it --rm dockette/debian:stretch /bin/bash
+docker run -it --rm dockette/stretch /bin/bash
 
-[![Docker Stars](https://img.shields.io/docker/stars/dockette/wheezy.svg?style=flat)](https://hub.docker.com/r/dockette/wheezy/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/wheezy.svg?style=flat)](https://hub.docker.com/r/dockette/wheezy/)
+docker run -it --rm dockette/debian:jessie /bin/bash
+docker run -it --rm dockette/jessie /bin/bash
 
-```
 docker run -it --rm dockette/debian:wheezy /bin/bash
+docker run -it --rm dockette/wheezy /bin/bash
 ```
 
+## Base
+
 ```
-docker run -it --rm dockette/wheezy /bin/bash
+FROM dockette/stretch
+
+RUN apt update && apt install -y curl
 ```
