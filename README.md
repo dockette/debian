@@ -24,16 +24,10 @@ Base docker image based on Debian. Special variants for Sid / Jessie / Wheezy.
 
 ```
 docker run -it --rm dockette/debian:sid /bin/bash
-docker run -it --rm dockette/sid /bin/bash
-
+docker run -it --rm dockette/debian:buster /bin/bash
 docker run -it --rm dockette/debian:stretch /bin/bash
-docker run -it --rm dockette/stretch /bin/bash
-
 docker run -it --rm dockette/debian:jessie /bin/bash
-docker run -it --rm dockette/jessie /bin/bash
-
 docker run -it --rm dockette/debian:wheezy /bin/bash
-docker run -it --rm dockette/wheezy /bin/bash
 ```
 
 ## Base
