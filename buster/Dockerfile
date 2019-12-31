@@ -1,6 +1,6 @@
 FROM debian:buster
 
-MAINTAINER Milan Sulc <sulcmil@gmail.com>
+LABEL maintainer="Milan Sulc <sulcmil@gmail.com>"
 
 ENV DEBIAN_FRONTEND noninteractive
 

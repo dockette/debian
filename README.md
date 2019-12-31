@@ -24,16 +24,25 @@ Base docker image based on Debian. Special variants for Sid / Jessie / Wheezy.
 
 ```
 docker run -it --rm dockette/debian:sid /bin/bash
+docker run -it --rm dockette/debian:sid-slim /bin/bash
+
 docker run -it --rm dockette/debian:buster /bin/bash
+docker run -it --rm dockette/debian:buster-slim /bin/bash
+
 docker run -it --rm dockette/debian:stretch /bin/bash
+docker run -it --rm dockette/debian:stretch-slim /bin/bash
+
 docker run -it --rm dockette/debian:jessie /bin/bash
+docker run -it --rm dockette/debian:jessie-slim /bin/bash
+
 docker run -it --rm dockette/debian:wheezy /bin/bash
+docker run -it --rm dockette/debian:wheezy-slim /bin/bash
 ```
 
 ## Base
 
 ```
-FROM dockette/stretch
+FROM dockette/debian:buster-slim
 
 RUN apt update && apt install -y curl
 ```
