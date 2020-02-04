@@ -27,6 +27,7 @@ RUN echo "deb http://archive.debian.org/debian wheezy main contrib non-free" > /
     echo "Pin-Priority: 700" >> /etc/apt/preferences.d/preferences && \
     # APT CONF
     echo "Acquire::Check-Valid-Until \"false\";" > /etc/apt/apt.conf.d/archive && \
+    # APT DEPS
     apt-get update && \
     apt-get dist-upgrade -y && \
     useradd -ms /bin/bash -u $USER_UID $USER_NAME && \
