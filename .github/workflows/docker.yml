@@ -11,6 +11,8 @@ jobs:
       matrix:
         include:
           - dockerfile: ./buster/Dockerfile
+            tag: "latest"
+          - dockerfile: ./buster/Dockerfile
             tag: "buster"
           - dockerfile: ./buster/Dockerfile.slim
             tag: "buster-slim"
