@@ -2,7 +2,7 @@ name: Docker
 
 on:
   push:
-    branches: master
+    branches: [master]
 
 jobs:
   docker:
@@ -10,8 +10,12 @@ jobs:
     strategy:
       matrix:
         include:
-          - dockerfile: ./buster/Dockerfile
+          - dockerfile: ./bullseye/Dockerfile
             tag: "latest"
+          - dockerfile: ./bullseye/Dockerfile
+            tag: "bullseye"
+          - dockerfile: ./bullseye/Dockerfile.slim
+            tag: "bullseye-slim"
           - dockerfile: ./buster/Dockerfile
             tag: "buster"
           - dockerfile: ./buster/Dockerfile.slim
