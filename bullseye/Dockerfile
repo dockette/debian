@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:bullseye
 
 LABEL maintainer="Milan Sulc <sulcmil@gmail.com>"
 
