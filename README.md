@@ -26,6 +26,12 @@ Base docker image based on Debian. Special variants for Sid / Jessie / Wheezy.
 docker run -it --rm dockette/debian:sid /bin/bash
 docker run -it --rm dockette/debian:sid-slim /bin/bash
 
+docker run -it --rm dockette/debian:bookworm /bin/bash
+docker run -it --rm dockette/debian:bookworm-slim /bin/bash
+
+docker run -it --rm dockette/debian:bullseye /bin/bash
+docker run -it --rm dockette/debian:bullseye-slim /bin/bash
+
 docker run -it --rm dockette/debian:buster /bin/bash
 docker run -it --rm dockette/debian:buster-slim /bin/bash
 
