@@ -39,4 +39,9 @@ jobs:
             tag: buster
           - dockerfile: buster/Dockerfile.slim
             tag: buster-slim
+          # 9
+          - dockerfile: stretch/Dockerfile
+            tag: stretch
+          - dockerfile: stretch/Dockerfile.slim
+            tag: stretch-slim
 
