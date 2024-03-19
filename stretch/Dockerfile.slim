@@ -9,7 +9,8 @@ ENV USER_UID 1000
 ENV USER_NAME dfx
 ENV USER_HOME /home/dfx
 
-RUN apt-get update && \
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
+    apt-get update && \
     apt-get dist-upgrade -y && \
     useradd -ms /bin/bash -u $USER_UID $USER_NAME && \
     apt-get clean -y && apt-get autoclean -y && apt-get autoremove -y && \
