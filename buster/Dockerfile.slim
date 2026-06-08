@@ -9,7 +9,10 @@ ENV USER_UID 1000
 ENV USER_NAME dfx
 ENV USER_HOME /home/dfx
 
-RUN apt-get update && \
+RUN echo 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99archive && \
+    echo "deb http://archive.debian.org/debian buster main" > /etc/apt/sources.list && \
+    echo "deb http://archive.debian.org/debian-security buster/updates main" >> /etc/apt/sources.list && \
+    apt-get update && \
     apt-get dist-upgrade -y && \
     useradd -ms /bin/bash -u $USER_UID $USER_NAME && \
     apt-get clean -y && apt-get autoclean -y && apt-get autoremove -y && \
