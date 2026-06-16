@@ -1,15 +1,15 @@
 # Debian
 
-Base docker image based on Debian. Special variants for Sid / Jessie / Wheezy.
+<p align=center>
+   <a href="https://github.com/dockette/debian/actions"><img src="https://github.com/dockette/debian/actions/workflows/docker.yml/badge.svg" alt="GitHub Actions"></a>
+   <a href="https://hub.docker.com/r/dockette/debian"><img src="https://img.shields.io/docker/pulls/dockette/debian.svg" alt="Docker Hub pulls"></a>
+   <a href="https://github.com/sponsors/f3l1x"><img src="https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ea4aaa" alt="GitHub Sponsors"></a>
+   <a href="https://github.com/orgs/dockette/discussions"><img src="https://img.shields.io/badge/support-discussions-6f42c1" alt="Support/Discussions"></a>
+</p>
+
+Base Docker image based on Debian.
 
 ------
-
-[![Docker Stars](https://img.shields.io/docker/stars/dockette/debian.svg?style=flat)](https://hub.docker.com/r/dockette/debian/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/dockette/debian.svg?style=flat)](https://hub.docker.com/r/dockette/debian/)
-
-## Discussion / Help
-
-[![Join the chat](https://img.shields.io/gitter/room/dockette/dockette.svg?style=flat-square)](https://gitter.im/dockette/dockette?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Image
 
@@ -18,37 +18,38 @@ Base docker image based on Debian. Special variants for Sid / Jessie / Wheezy.
     - `USER_UID`: `1000`
     - `USER_NAME`: `dfx`
     - `USER_HOME`: `/home/dfx`
-- some optimalization for smaller image 
+- cleanup and optimization for smaller images
+
+## Tags
+
+The default local build uses `bookworm` from `bookworm/Dockerfile`.
+
+The Makefile provides named standard build targets for directory variants and named slim/test/run targets for `bookworm` and `bullseye`; use `DOCKER_VERSION`, `DOCKER_TAG`, and `DOCKER_FILE` overrides for other slim or manual builds.
+
+CI tests these tags:
+
+- `bookworm`, `bookworm-slim`
+- `bullseye`, `bullseye-slim`
+- `latest` (built from `bullseye/Dockerfile`)
+
+CI also publishes legacy compatibility tags `buster`, `buster-slim`, `stretch`, and `stretch-slim`. These Debian releases are EOL; prefer current tags for new images.
+
+Additional directories exist for `sid`, `jessie`, and `wheezy`, but they are not in the workflow matrix. `jessie` and `wheezy` are EOL and should only be built manually when compatibility requires them.
 
 ## CLI
 
-```
-docker run -it --rm dockette/debian:sid /bin/bash
-docker run -it --rm dockette/debian:sid-slim /bin/bash
-
+```sh
 docker run -it --rm dockette/debian:bookworm /bin/bash
 docker run -it --rm dockette/debian:bookworm-slim /bin/bash
 
 docker run -it --rm dockette/debian:bullseye /bin/bash
 docker run -it --rm dockette/debian:bullseye-slim /bin/bash
-
-docker run -it --rm dockette/debian:buster /bin/bash
-docker run -it --rm dockette/debian:buster-slim /bin/bash
-
-docker run -it --rm dockette/debian:stretch /bin/bash
-docker run -it --rm dockette/debian:stretch-slim /bin/bash
-
-docker run -it --rm dockette/debian:jessie /bin/bash
-docker run -it --rm dockette/debian:jessie-slim /bin/bash
-
-docker run -it --rm dockette/debian:wheezy /bin/bash
-docker run -it --rm dockette/debian:wheezy-slim /bin/bash
 ```
 
 ## Base
 
-```
-FROM dockette/debian:buster-slim
+```Dockerfile
+FROM dockette/debian:bookworm
 
 RUN apt update && apt install -y curl
 ```
