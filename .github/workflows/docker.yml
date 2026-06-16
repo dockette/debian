@@ -52,6 +52,7 @@ jobs:
   build:
     name: "Build"
     needs: ["test"]
+    if: github.ref == 'refs/heads/master'
     uses: dockette/.github/.github/workflows/docker.yml@master
     secrets: inherit
     with:
