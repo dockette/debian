@@ -9,6 +9,7 @@ _docker-build-%:
 		./${VERSION}
 
 docker-build-sid: _docker-build-sid # dev
+docker-build-trixie: _docker-build-trixie # 13
 docker-build-bookworm: _docker-build-bookworm # 12
 docker-build-bullseye: _docker-build-bullseye # 11
 docker-build-buster: _docker-build-buster # 10
