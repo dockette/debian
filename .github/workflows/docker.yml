@@ -25,8 +25,13 @@ jobs:
       matrix:
         include:
           # latest
-          - dockerfile: bullseye/Dockerfile
+          - dockerfile: trixie/Dockerfile
             tag: latest
+          # 13
+          - dockerfile: trixie/Dockerfile
+            tag: trixie
+          - dockerfile: trixie/Dockerfile.slim
+            tag: trixie-slim
           # 12
           - dockerfile: bookworm/Dockerfile
             tag: bookworm
